@@ -44,6 +44,7 @@ public class Tontino2 extends batteri.Batterio implements Cloneable{
         int xMigliore = x - delta - 10;
         int yMigliore = y - delta - 10;
         int sforzoMigliore = Math.abs(getX() - xMigliore) + Math.abs(getY() - yMigliore);
+        
         for (int i = -delta; i <= delta; i += delta/5) {
             for (int j = -delta; j <= delta; j += delta/5) {
                 if (ControllaCibo(x + i, y + j)) {
