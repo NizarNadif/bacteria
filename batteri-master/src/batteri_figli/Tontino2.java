@@ -31,17 +31,53 @@ import java.util.logging.Logger;
  */
 
 public class Tontino2 extends batteri.Batterio implements Cloneable{
+    
+    private int mosseCompiute;
+    private int spostamentoNullo = 1;
+
     public Tontino2(int x, int y, Color c, batteri.Food f){
         super(x,y,c,f);
+        this.mosseCompiute = 0;
     }
+
+    private void controlloVicini(int delta) {
+        int xMigliore = x - delta - 10;
+        int yMigliore = y - delta - 10;
+        int sforzoMigliore = Math.abs(getX() - xMigliore) + Math.abs(getY() - yMigliore);
+        for (int i = -delta; i <= delta; i += delta/5) {
+            for (int j = -delta; j <= delta; j += delta/5) {
+                if (ControllaCibo(x + i, y + j)) {
+                    int sforzo = Math.abs(getX() - (x + i)) + Math.abs(getY() - (y + j));
+                    if (sforzo < sforzoMigliore) {
+                        xMigliore = x + i;
+                        yMigliore = y + j;
+                        sforzoMigliore = Math.abs(getX() - xMigliore) + Math.abs(getY() - yMigliore);
+                    }
+                }
+            }
+        }
+        if (xMigliore != x - delta - 10){
+            x = xMigliore;
+            y = yMigliore;
+        }
+        else {
+            x += spostamentoNullo;
+            spostamentoNullo*=-1;
+        }
+        mosseCompiute++;
+        mosseCompiute %= 50;
+    }
+
     @Override
-    protected void Sposta(){
-        int dx = (int)(Math.random()*3) - 1;
-        int dy = (int)(Math.random()*3) - 1;
-        //if (x+dx >= 0 && x+dx<food.getWidth())
-            x += dx; 
-        //if (y+dy >= 0 && y+dy<food.getHeight())
-            y += dy; 
+    protected void Sposta() {
+
+        //Controlla nel 7x7 attorno a lui se c'è del cibo e tiene in memoria la prima posizione in cui l'ha trovato e l'ultima
+        //Il batterio segnalerà agli altri 
+        if (mosseCompiute == 0) {
+            controlloVicini(100);
+        } else {
+            controlloVicini(5);
+        }
     }
     
     @Override
