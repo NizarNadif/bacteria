@@ -1,6 +1,6 @@
 # Progetto batteri informatica
 
-### Incontro 1 (12/03/2020  10:50 - 13:50):
+## Incontro 1 (12/03/2020  10:50 - 13:50):
 
 **Obiettivo:** discutere la modalità di lavoro e le idee che ci sono venute, decidere la cadenza degli incontri.
 
@@ -15,7 +15,7 @@ Infine abbiamo fissato le date dei prossimi incontri.
 
 **Lavoro da svolgere per il prossimo incontro:** trovare un nome al nostro batterio e apportare singolarmente delle modifiche al batterio per poi discuterne con gli altri.
 
-### Incontro 2 (14/03/2020 10:15 – 12:00):
+## Incontro 2 (14/03/2020 10:15 – 12:00):
 
 **Obiettivo:** confrontarci sulle idee venuteci nei giorni passati dal precedente incontro, visionare le implementazioni e ricavare dall’unione di queste la miglior versione del batterio. Inoltre presentare il nostro batterio e le sue versioni precedenti con i loro funzionamenti logici ai professori Bugatti Alessandro e Donato Tobia.
 
