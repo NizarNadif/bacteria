@@ -6,11 +6,11 @@
 
 **Partecipanti:** tutti i membri del gruppo.
 
-**Argomenti trattati / decisioni prese:** ci siamo confrontati fra di noi discutendo delle nostre proposte per implementare il batterio e sono emerse le seguenti proposte:
+**Argomenti trattati / decisioni prese:** ci siamo confrontati fra di noi discutendo delle nostre proposte per implementare il batterio e sono emerse le seguenti proposte:<ul>
 <li>Mappare il terreno e condividere le posizioni del cibo trovate da ogni batterio con gli altri per poi permettere ai batteri che non hanno trovato autonomamente del cibo di portarsi nella posizione segnalata;</li>
 <li>Durante l’implementazione di questa idea ci siamo accorti che la modalità con la quale un batterio cercava il cibo in una zona ampia (200 x 200) della mappa rendeva non necessaria la condivisione delle posizioni trovate con la scansione prima citata. Abbiamo quindi deciso di non implementare al momento la prima idea per concentrarci sulla seguente;</li>
 <li>Ogni batterio controlla il quadrato di lato 10 attorno a sé in cerca di cibo e si sposta nella posizione di quello più vicino.
-Ogni 24 mosse così compiute il batterio controlla invece il quadrato di lato 200 attorno a sé con una distanza di 20 tra un controllo e l’altro in modo da trovare nuove zone di cibo e si sposta nella migliore fra queste. Se non trova il cibo in entrambi i casi effettua un movimento con sforzo pari a uno, utile per rendere possibile la duplicazione ma inutile per la ricerca di nuove zone.</li>
+Ogni 24 mosse così compiute il batterio controlla invece il quadrato di lato 200 attorno a sé con una distanza di 20 tra un controllo e l’altro in modo da trovare nuove zone di cibo e si sposta nella migliore fra queste. Se non trova il cibo in entrambi i casi effettua un movimento con sforzo pari a uno, utile per rendere possibile la duplicazione ma inutile per la ricerca di nuove zone.</li></ul>
 Infine abbiamo fissato le date dei prossimi incontri.
 
 **Lavoro da svolgere per il prossimo incontro:** trovare un nome al nostro batterio e apportare singolarmente delle modifiche al batterio per poi discuterne con gli altri.
