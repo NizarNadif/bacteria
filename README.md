@@ -22,10 +22,10 @@ Infine abbiamo fissato le date dei prossimi incontri.
 **Partecipanti:** tutti i membri del gruppo e i professori.
 
 **Argomenti trattati / decisioni prese:** L’incontro si è svolto in due parti, la prima fra noi membri del gruppo e la seconda con la presenza dei professori.
-Durante lo svolgimento della prima parte ognuno di noi ha presentato il lavoro svolto dall’ultimo incontro spiegando le modifiche apportate al codice:
+Durante lo svolgimento della prima parte ognuno di noi ha presentato il lavoro svolto dall’ultimo incontro spiegando le modifiche apportate al codice:<ul>
 <li>L’idea di Cornacchiari è stata quella di non controllare l’area più ampia ogni 25 mosse, ma bensì di effettuare questo controllo solo se la ricerca di cibo nella zona più ristretta non ha portato a risultati. Questo fa sì che ogni batterio consumi completamente ogni zona circostante evitando di allontanarsi prima che questa venga terminata e, nel caso in cui un batterio non abbia attorno a sé del cibo cerca subito un’altra zona nella quale dirigersi.</li>
 <li>Quella di Nadif riguardava il movimento del batterio: anziché far effettuare al batterio uno spostamento inutile è meglio sfruttarlo per andare alla ricerca di nuove aree di cibo. Per fare questo il batterio si muove in diagonale rimbalzando a contatto con i bordi del terreno.
-È stata inoltre ridotta l’area nella quale i batteri possono muoversi in quanto le zone esterne a quest’area vengono controllate tramite la ricerca ampia del batterio; evitiamo così che questa ricerca venga effettuata fuori dai limiti del terreno, migliorando le prestazioni.</li>
+È stata inoltre ridotta l’area nella quale i batteri possono muoversi in quanto le zone esterne a quest’area vengono controllate tramite la ricerca ampia del batterio; evitiamo così che questa ricerca venga effettuata fuori dai limiti del terreno, migliorando le prestazioni.</li></ul>
 Unendo queste modifiche è stata creata la prima versione del nostro batterio.
 Nella seconda parte dell’incontro è stato presentato il batterio agli insegnanti ed è stata chiesta al professor Bugatti la possibilità di sfidare i batteri vincitori della scorsa edizione del torneo, egli ci ha concesso di rivelarci solo l’eventuale vittoria del nostro batterio.
 **Lavoro da svolgere per il prossimo incontro:** apportare ulteriori modifiche al batterio.
