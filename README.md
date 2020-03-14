@@ -13,8 +13,8 @@
 Ogni 24 mosse così compiute il batterio controlla invece il quadrato di lato 200 attorno a sé con una distanza di 20 tra un controllo e l’altro in modo da trovare nuove zone di cibo e si sposta nella migliore fra queste. Se non trova il cibo in entrambi i casi effettua un movimento con sforzo pari a uno, utile per rendere possibile la duplicazione ma inutile per la ricerca di nuove zone.</li></ul>
 Infine abbiamo fissato le date dei prossimi incontri.
 
-
 **Lavoro da svolgere per il prossimo incontro:** trovare un nome al nostro batterio e apportare singolarmente delle modifiche al batterio per poi discuterne con gli altri.
+
 
 ## Incontro 2 (14/03/2020 10:15 – 12:00):
 
@@ -29,7 +29,6 @@ Durante lo svolgimento della prima parte ognuno di noi ha presentato il lavoro s
 È stata inoltre ridotta l’area nella quale i batteri possono muoversi in quanto le zone esterne a quest’area vengono controllate tramite la ricerca ampia del batterio; evitiamo così che questa ricerca venga effettuata fuori dai limiti del terreno, migliorando le prestazioni.</li></ul>
 Unendo queste modifiche è stata creata la prima versione del nostro batterio.
 Nella seconda parte dell’incontro è stato presentato il batterio agli insegnanti ed è stata chiesta al professor Bugatti la possibilità di sfidare i batteri vincitori della scorsa edizione del torneo, egli ci ha concesso di rivelarci solo l’eventuale vittoria del nostro batterio.
-
 
 **Lavoro da svolgere per il prossimo incontro:** apportare ulteriori modifiche al batterio.
 
