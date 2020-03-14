@@ -28,37 +28,22 @@ import java.util.logging.Logger;
  * @author Alessandro Bugatti &lt; alessandro.bugatti@gmail.com &gt;
  */
 public class Tontino extends batteri.Batterio implements Cloneable {
-    
-    private int mosseCompiute; //ogni 25 mosse facciamo un'ampia scansione
-    private int energia = 400; //energia stimata di avere all'inizio (minimo = 200, massimo = 800, media = 500)
-    
-    private int spostamentoX = 1;
-    private int spostamentoY = 0;
-    private int versoX = 1;
-    private int versoY = 1;
+
+    private int spostamentoNullo;
 
     public Tontino(int x, int y, Color c, batteri.Food f) {
         super(x, y, c, f);
-        this.mosseCompiute = 0;
+        this.spostamentoNullo = (int)(Math.random()*2) * 2 - 1;
     }
-    
-    /**
-     * Scannerizza l'area circostante in cerca di cibo e si sposta
-     * alla fonte di cibo che apporta il minor sforzo possibile
-     * @param delta raggio della scansione
-     */
-    private void controlloVicini(int delta) {
-        
+
+    private boolean controlloVicini(int delta) {
         int xMigliore = x - delta - 10;
         int yMigliore = y - delta - 10;
-        
         int sforzoMigliore = Math.abs(getX() - xMigliore) + Math.abs(getY() - yMigliore);
-        int sforzo;
-        
-        for (int i = -delta; i <= delta; i += delta/5) {
-            for (int j = -delta; j <= delta; j += delta/5) {
+        for (int i = -delta; i <= delta; i += delta / 5) {
+            for (int j = -delta - 1; j <= delta - 1; j += delta / 5) {
                 if (ControllaCibo(x + i, y + j)) {
-                    sforzo = Math.abs(getX() - (x + i)) + Math.abs(getY() - (y + j));
+                    int sforzo = Math.abs(getX() - (x + i)) + Math.abs(getY() - (y + j));
                     if (sforzo < sforzoMigliore) {
                         xMigliore = x + i;
                         yMigliore = y + j;
@@ -67,43 +52,24 @@ public class Tontino extends batteri.Batterio implements Cloneable {
                 }
             }
         }
-        if (xMigliore != x - delta - 10 && sforzoMigliore < energia){
+        if (xMigliore != x - delta - 10) {
             x = xMigliore;
             y = yMigliore;
-            energia +=  100 - sforzoMigliore;
-        }
-        else {
-           if ( (x + spostamentoX < 75 && versoX == -1) || (x + spostamentoX >= getFoodWitdh() - 75 && versoX == 1) )
-               versoX = -versoX;
-           
-           if ( (y + spostamentoY < 75 && versoY == -1) || (y + spostamentoY >= getFoodHeight() - 75 && versoY == 1) )
-               versoY = -versoY;
-           
-            x += spostamentoX * versoX;
-            y += spostamentoY * versoY;
-            
-            int temp = spostamentoX;
-            spostamentoX = spostamentoY;
-            spostamentoY = temp;
-            
-            /* eH mA pUoI fArE lO sCaMbIo SeNzA uSaRe NeSsUnA vArIaBiLe
-            *spostamentoX += spostamentoY;
-            spostamentoY = spostamentoX - spostamentoY;
-            spostamentoX -= spostamentoY;
-            */
-            energia--;
-        }
-        mosseCompiute = (mosseCompiute + 1)%25;
+            return true;
+        } else 
+            return false;
     }
 
     @Override
     protected void Sposta() {
-        int delta = 10;
-        //ogni 25 tic il batterio compie un'ampia ispezione del campo (200 x 200)
-        if (mosseCompiute == 0)
-            delta = 100;
-        
-        controlloVicini(delta);
+
+        //Controlla nel 7x7 attorno a lui se c'è del cibo e tiene in memoria la prima posizione in cui l'ha trovato e l'ultima
+        //Il batterio segnalerà agli altri 
+        if (controlloVicini(5)); else if (controlloVicini(100)); else {
+            if (x + spostamentoNullo >= getFoodWitdh() || x + spostamentoNullo < 0)
+                spostamentoNullo*=-1;
+            x += spostamentoNullo;
+        }
     }
 
     @Override
@@ -115,6 +81,5 @@ public class Tontino extends batteri.Batterio implements Cloneable {
         }
         return null;
     }
-
 
 }
