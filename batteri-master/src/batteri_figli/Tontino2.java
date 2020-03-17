@@ -16,10 +16,7 @@ package batteri_figli;
   You should have received a copy of the GNU General Public License
   along with this program; if not, write to the Free Software
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
-*/
-
-
-
+ */
 import java.awt.Color;
 import java.util.Random;
 import java.util.logging.Level;
@@ -27,17 +24,17 @@ import java.util.logging.Logger;
 
 /**
  * Classe d'esempio per la gara
+ *
  * @author Alessandro Bugatti &lt; alessandro.bugatti@gmail.com &gt;
  */
+public class Tontino2 extends batteri.Batterio implements Cloneable {
 
-public class Tontino2 extends batteri.Batterio implements Cloneable{
-    
     private int spostamentoX = 1;
     private int spostamentoY = 0;
-    private int versoX = (int)(Math.random()*2) * 2 - 1;
-    private int versoY = (int)(Math.random()*2) * 2 - 1;
-    
-    
+    private int versoX = (int) (Math.random() * 2) * 2 - 1;
+    private int versoY = (int) (Math.random() * 2) * 2 - 1;
+    private int situazione = 0;
+
     public Tontino2(int x, int y, Color c, batteri.Food f) {
         super(x, y, c, f);
     }
@@ -62,8 +59,27 @@ public class Tontino2 extends batteri.Batterio implements Cloneable{
             x = xMigliore;
             y = yMigliore;
             return true;
-        } else 
+        } else {
             return false;
+        }
+    }
+
+    private void spostamento() {
+        if ((x + spostamentoX < 75 && versoX == -1) || (x + spostamentoX >= getFoodWitdh() - 75 && versoX == 1)) {
+            versoX = -versoX;
+        }
+
+        if ((y + spostamentoY < 75 && versoY == -1) || (y + spostamentoY >= getFoodHeight() - 75 && versoY == 1)) {
+            versoY = -versoY;
+        }
+
+        x += spostamentoX * versoX;
+        y += spostamentoY * versoY;
+
+        int temp = spostamentoX;
+        spostamentoX = spostamentoY;
+        spostamentoY = temp;
+
     }
 
     @Override
@@ -71,30 +87,30 @@ public class Tontino2 extends batteri.Batterio implements Cloneable{
 
         //Controlla nel 7x7 attorno a lui se c'è del cibo e tiene in memoria la prima posizione in cui l'ha trovato e l'ultima
         //Il batterio segnalerà agli altri 
-        if (controlloVicini(5)); else if (controlloVicini(100)); else {
-            if ( (x + spostamentoX < 75 && versoX == -1) || (x + spostamentoX >= getFoodWitdh() - 75 && versoX == 1) )
-               versoX = -versoX;
-           
-           if ( (y + spostamentoY < 75 && versoY == -1) || (y + spostamentoY >= getFoodHeight() - 75 && versoY == 1) )
-               versoY = -versoY;
-           
-            x += spostamentoX * versoX;
-            y += spostamentoY * versoY;
-            
-            int temp = spostamentoX;
-            spostamentoX = spostamentoY;
-            spostamentoY = temp;
+        if (situazione == 0) {
+            boolean risultato = controlloVicini(5);
+            if (!risultato) {
+                situazione = 1;
+                spostamento();
+            }
         }
+        else if (situazione == 1) {
+            boolean risultato = controlloVicini(100);
+            if (risultato)
+                situazione = 0;
+            else 
+                spostamento();
+        } 
     }
 
     @Override
-    public batteri.Batterio Clona(){
-        try { 
-            return (Tontino2)this.clone();
+    public batteri.Batterio Clona() {
+        try {
+            return (Tontino2) this.clone();
         } catch (CloneNotSupportedException ex) {
             Logger.getLogger(Tontino2.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
-    
+
 }

@@ -30,6 +30,7 @@ import java.util.logging.Logger;
 public class Tontino extends batteri.Batterio implements Cloneable {
 
     private int spostamentoNullo;
+    private int situazione = 0;
 
     public Tontino(int x, int y, Color c, batteri.Food f) {
         super(x, y, c, f);
@@ -60,15 +61,32 @@ public class Tontino extends batteri.Batterio implements Cloneable {
             return false;
     }
 
+    private void spostamento(){
+        if (x + spostamentoNullo >= getFoodWitdh() || x + spostamentoNullo < 0)
+                spostamentoNullo*=-1;
+            x += spostamentoNullo;
+        
+    }
+    
+    
     @Override
     protected void Sposta() {
 
         //Controlla nel 7x7 attorno a lui se c'è del cibo e tiene in memoria la prima posizione in cui l'ha trovato e l'ultima
         //Il batterio segnalerà agli altri 
-        if (controlloVicini(5)); else if (controlloVicini(100)); else {
-            if (x + spostamentoNullo >= getFoodWitdh() || x + spostamentoNullo < 0)
-                spostamentoNullo*=-1;
-            x += spostamentoNullo;
+        if (situazione == 0) {
+            boolean risultato = controlloVicini(5);
+            if (!risultato) {
+                situazione = 1;
+                spostamento();
+            }
+        }
+        else if (situazione == 1) {
+            boolean risultato = controlloVicini(100);
+            if (risultato)
+                situazione = 0;
+            else 
+                spostamento();
         }
     }
 

@@ -86,7 +86,7 @@ public class mainForm extends javax.swing.JFrame {
             }
 
         };
-        timerUpdateSimulation = new Timer(50, taskUpdateSimulation); 
+        timerUpdateSimulation = new Timer(5, taskUpdateSimulation); 
         //timer.setInitialDelay(2000);        
         //timerUpdateSimulation.setRepeats(true);
         
@@ -100,7 +100,7 @@ public class mainForm extends javax.swing.JFrame {
             }
 
         };
-        timerUpdateFood = new Timer(1000, taskUpdateFood); 
+        timerUpdateFood = new Timer(100, taskUpdateFood); 
         //timer.setInitialDelay(2000);        
         timerUpdateFood.setRepeats(true);
         //timerUpdateFood.start();
@@ -118,7 +118,7 @@ public class mainForm extends javax.swing.JFrame {
             }
 
         };
-        timerUpdateResult = new Timer(1000, taskUpdateResult); 
+        timerUpdateResult = new Timer(100, taskUpdateResult); 
         //timer.setInitialDelay(2000);        
         //timerUpdateResult.setRepeats(true);
         //timerUpdateResult.start();
