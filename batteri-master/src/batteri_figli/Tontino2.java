@@ -58,7 +58,7 @@ public class Tontino2 extends batteri.Batterio implements Cloneable {
         if (xMigliore != x - delta - 10) {
             x = xMigliore;
             y = yMigliore;
-            return true;
+            return true; 
         } else {
             return false;
         }
