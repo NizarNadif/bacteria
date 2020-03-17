@@ -29,7 +29,7 @@ Durante lo svolgimento della prima parte ognuno di noi ha presentato il lavoro s
 È stata inoltre ridotta l’area nella quale i batteri possono muoversi in quanto le zone esterne a quest’area vengono controllate tramite la ricerca ampia del batterio; evitiamo così che questa ricerca venga effettuata fuori dai limiti del terreno, migliorando le prestazioni.</li></ul>
 Unendo queste modifiche è stata creata la prima versione del nostro batterio.
 Nella seconda parte dell’incontro è stato presentato il batterio agli insegnanti ed è stata chiesta al professor Bugatti la possibilità di sfidare i batteri vincitori della scorsa edizione del torneo, egli ci ha concesso di rivelarci solo l’eventuale vittoria del nostro batterio.
-<br>
+
 **Lavoro da svolgere per il prossimo incontro:** apportare ulteriori modifiche al batterio.
 
 
