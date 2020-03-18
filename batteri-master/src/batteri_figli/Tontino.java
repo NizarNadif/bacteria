@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 public class Tontino extends batteri.Batterio implements Cloneable {
 
     /**CARATTERISTICHE:
-     * - Controllo ad area con delta 5, se non va a a buon fine spostamento orizzontale e situazione successiva 
+     * - Controllo ad area con delta 5, se non va a a buon fine spostamento orizzontale e situazione successiva
      * - Oppure controllo ad area con delta 100, se non va a buon fine spostamento orizzontale e situazione precedente
      * - Tutto viene svolto in 2 turni differenti
     **/
