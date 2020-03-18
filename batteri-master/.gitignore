@@ -1,4 +1,13 @@
-# NetBeans specific
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# IntelliJ
+out/
+
+# NetBeans specific #
 nbproject/private/
 build/
 nbbuild/

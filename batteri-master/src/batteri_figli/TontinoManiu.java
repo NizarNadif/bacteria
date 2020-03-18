@@ -32,7 +32,13 @@ import java.util.logging.Logger;
 
 public class TontinoManiu extends batteri.Batterio implements Cloneable{
     
-    private int mosseCompiute;
+    /**CARATTERISTICHE:
+     * - Controllo ad area con delta 10, se non va a buon fine situazione successiva
+     * - Oppure controllo ad area con delta 100, se non va a buon fine situazione precedente
+     * - Se non vanno entrambi a buon fine si sposta in obliquo, l'area di movimento è ridotta di 75, e prima situazione
+     * - Tutto viene svolto in 3 turni differenti
+    **/
+    
     private int spostamentoX = 1;
     private int spostamentoY = 0;
     private int versoX = 1;
@@ -41,7 +47,6 @@ public class TontinoManiu extends batteri.Batterio implements Cloneable{
 
     public TontinoManiu(int x, int y, Color c, batteri.Food f){
         super(x,y,c,f);
-        this.mosseCompiute = 0;
     }
 
     private boolean controlloVicini(int delta, int div) {
@@ -64,7 +69,6 @@ public class TontinoManiu extends batteri.Batterio implements Cloneable{
         if (xMigliore != x - delta - 10 && Math.abs(xMigliore - x) + Math.abs(yMigliore - y) < 250 ){
             x = xMigliore;
             y = yMigliore;
-            mosseCompiute++;
             return true;
         }
         else if (Math.abs(xMigliore - x) + Math.abs(yMigliore - y) >= 250 )
@@ -91,7 +95,6 @@ public class TontinoManiu extends batteri.Batterio implements Cloneable{
             int temp = spostamentoX;
             spostamentoX = spostamentoY;
             spostamentoY = temp;
-            mosseCompiute++;
     }
 
     @Override

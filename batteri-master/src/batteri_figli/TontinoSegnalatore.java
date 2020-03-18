@@ -32,6 +32,14 @@ import java.util.logging.Logger;
  */
 public class TontinoSegnalatore extends batteri.Batterio implements Cloneable {
 
+    /**CARATTERISTICHE:
+     * - Controllo ad area con delta 10, se non va a a buon fine spostamento obliquo e situazione successiva
+     * - Oppure controllo ad area con delta 100, se non va a a buon fine spostamento obliquo e situazione successiva
+     * - Oppure controllo nella lista del cibo segnalato, se non va a a buon fine spostamento obliquo e situazione precedente
+     * - L'area di movimento è ridotta di 100
+     * - Tutto viene svolto in 3 turni differenti
+    **/
+    
     private int spostamentoX = 1;
     private int spostamentoY = 0;
     private int versoX = (int) (Math.random() * 2) * 2 - 1;
