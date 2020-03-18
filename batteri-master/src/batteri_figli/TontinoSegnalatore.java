@@ -114,9 +114,6 @@ public class TontinoSegnalatore extends batteri.Batterio implements Cloneable {
 
     @Override
     protected void Sposta() {
-
-        //Controlla nel 7x7 attorno a lui se c'è del cibo e tiene in memoria la prima posizione in cui l'ha trovato e l'ultima
-        //Il batterio segnalerà agli altri
         switch (situazione) {
             case 0: {
                 boolean risultato = controlloVicini(5);
