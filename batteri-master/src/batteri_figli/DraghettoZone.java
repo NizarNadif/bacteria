@@ -97,6 +97,13 @@ public class DraghettoZone extends batteri.Batterio implements Cloneable {
         xMassimo = xMinimo + 100;
         yMinimo = ((int) (y / 100)) * 100;
         yMassimo = yMinimo + 100;
+        
+        if (xMassimo > getFoodWitdh())
+            xMassimo = getFoodWitdh();
+        
+        if (yMassimo > getFoodHeight())
+            yMassimo = getFoodHeight();
+        
         if ((x + spostamentoX < xMinimo && versoX == -1) || (x + spostamentoX >= xMassimo && versoX == 1)) {
             versoX = -versoX;
         }
