@@ -36,7 +36,7 @@ public class TontinoSegnalatore extends batteri.Batterio implements Cloneable {
      * - Controllo ad area con delta 10, se non va a a buon fine spostamento obliquo e situazione successiva
      * - Oppure controllo ad area con delta 100, se non va a a buon fine spostamento obliquo e situazione successiva
      * - Oppure controllo nella lista del cibo segnalato, se non va a a buon fine spostamento obliquo e situazione precedente
-     * - L'area di movimento è ridotta di 100
+     * - L'area di movimento è ridotta di 45
      * - Tutto viene svolto in 3 turni differenti
     **/
     
@@ -95,11 +95,11 @@ public class TontinoSegnalatore extends batteri.Batterio implements Cloneable {
     }
 
     private void spostamento() {
-        if ((x + spostamentoX < 100 && versoX == -1) || (x + spostamentoX >= getFoodWitdh() - 100 && versoX == 1)) {
+        if ((x + spostamentoX < 75 && versoX == -1) || (x + spostamentoX >= getFoodWitdh() - 75 && versoX == 1)) {
             versoX = -versoX;
         }
 
-        if ((y + spostamentoY < 100 && versoY == -1) || (y + spostamentoY >= getFoodHeight() - 100 && versoY == 1)) {
+        if ((y + spostamentoY < 75 && versoY == -1) || (y + spostamentoY >= getFoodHeight() - 75 && versoY == 1)) {
             versoY = -versoY;
         }
 
