@@ -12,7 +12,7 @@
 * Ogni batterio controlla il quadrato di lato 10 attorno a sé in cerca di cibo e si sposta nella posizione di quello più vicino.
 Ogni 24 mosse così compiute il batterio controlla invece il quadrato di lato 200 attorno a sé con una distanza di 20 tra un controllo e l’altro in modo da trovare nuove zone di cibo e si sposta nella migliore fra queste. Se non trova il cibo in entrambi i casi effettua un movimento con sforzo pari a uno, utile per rendere possibile la duplicazione ma inutile per la ricerca di nuove zone.
 
-Infine abbiamo fissato le date dei prossimi incontri.<br>
+Infine abbiamo fissato le date dei prossimi incontri.
 
 ***Lavoro da svolgere per il prossimo incontro:*** trovare un nome al nostro batterio e apportare singolarmente delle modifiche al batterio per poi discuterne con gli altri.
 
@@ -24,13 +24,34 @@ Infine abbiamo fissato le date dei prossimi incontri.<br>
 ***Partecipanti:*** tutti i membri del gruppo e i professori.
 
 ***Argomenti trattati / decisioni prese:*** L’incontro si è svolto in due parti, la prima fra noi membri del gruppo e la seconda con la presenza dei professori.
-Durante lo svolgimento della prima parte ognuno di noi ha presentato il lavoro svolto dall’ultimo incontro spiegando le modifiche apportate al codice:<ul>
-<li>L’idea di Cornacchiari è stata quella di non controllare l’area più ampia ogni 25 mosse, ma bensì di effettuare questo controllo solo se la ricerca di cibo nella zona più ristretta non ha portato a risultati. Questo fa sì che ogni batterio consumi completamente ogni zona circostante evitando di allontanarsi prima che questa venga terminata e, nel caso in cui un batterio non abbia attorno a sé del cibo cerca subito un’altra zona nella quale dirigersi.</li>
-<li>Quella di Nadif riguardava il movimento del batterio: anziché far effettuare al batterio uno spostamento inutile è meglio sfruttarlo per andare alla ricerca di nuove aree di cibo. Per fare questo il batterio si muove in diagonale rimbalzando a contatto con i bordi del terreno.
-È stata inoltre ridotta l’area nella quale i batteri possono muoversi in quanto le zone esterne a quest’area vengono controllate tramite la ricerca ampia del batterio; evitiamo così che questa ricerca venga effettuata fuori dai limiti del terreno, migliorando le prestazioni.</li></ul>
+Durante lo svolgimento della prima parte ognuno di noi ha presentato il lavoro svolto dall’ultimo incontro spiegando le modifiche apportate al codice:
+* L’idea di Cornacchiari è stata quella di non controllare l’area più ampia ogni 25 mosse, ma bensì di effettuare questo controllo solo se la ricerca di cibo nella zona più ristretta non ha portato a risultati. Questo fa sì che ogni batterio consumi completamente ogni zona circostante evitando di allontanarsi prima che questa venga terminata e, nel caso in cui un batterio non abbia attorno a sé del cibo cerca subito un’altra zona nella quale dirigersi.
+* Quella di Nadif riguardava il movimento del batterio: anziché far effettuare al batterio uno spostamento inutile è meglio sfruttarlo per andare alla ricerca di nuove aree di cibo. Per fare questo il batterio si muove in diagonale rimbalzando a contatto con i bordi del terreno.
+È stata inoltre ridotta l’area nella quale i batteri possono muoversi in quanto le zone esterne a quest’area vengono controllate tramite la ricerca ampia del batterio; evitiamo così che questa ricerca venga effettuata fuori dai limiti del terreno, migliorando le prestazioni.
+
 Unendo queste modifiche è stata creata la prima versione del nostro batterio.
-Nella seconda parte dell’incontro è stato presentato il batterio agli insegnanti ed è stata chiesta al professor Bugatti la possibilità di sfidare i batteri vincitori della scorsa edizione del torneo, egli ci ha concesso di rivelarci solo l’eventuale vittoria del nostro batterio.<br>
+Nella seconda parte dell’incontro è stato presentato il batterio agli insegnanti ed è stata chiesta al professor Bugatti la possibilità di sfidare i batteri vincitori della scorsa edizione del torneo, egli ci ha concesso di rivelarci solo l’eventuale vittoria del nostro batterio.
 
 ***Lavoro da svolgere per il prossimo incontro:*** apportare ulteriori modifiche al batterio.
 
 
+## Incontro 3 (17/03/2020 11:20 – 12:20):
+
+***Obiettivo:*** 
+
+***Partecipanti:*** tutti i membri del gruppo e i professori.
+
+***Argomenti trattati / decisioni prese:*** .
+
+***Lavoro da svolgere per il prossimo incontro:*** apportare ulteriori modifiche al batterio.
+
+
+## Incontro 4 (17/03/2020 09:45 – 10:45):
+
+***Obiettivo:*** 
+
+***Partecipanti:*** Cornacchiari, Nadif, Singh e i professori.
+
+***Argomenti trattati / decisioni prese:*** .
+
+***Lavoro da svolgere per il prossimo incontro:*** apportare ulteriori modifiche al batterio.
