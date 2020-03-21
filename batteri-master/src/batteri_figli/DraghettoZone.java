@@ -36,8 +36,7 @@ public class DraghettoZone extends batteri.Batterio implements Cloneable {
      * - Tutto viene svolto in 2 turni differenti
      **/
     
-    private int nMosse = 0,
-            xMinimo = 75,
+    private int xMinimo = 75,
             yMinimo = 75,
             xMassimo = getFoodWitdh() - 75,
             yMassimo = getFoodHeight() - 75;
@@ -78,22 +77,21 @@ public class DraghettoZone extends batteri.Batterio implements Cloneable {
     }
     
     private void spostamento() {
-        //if (nMosse > 200){
-            xMinimo = ((int) (x / 100)) * 100;
-            xMassimo = xMinimo + 100;
-            yMinimo = ((int) (y / 100)) * 100;
-            yMassimo = yMinimo + 100;
-            
-            if (xMassimo > (int) (getFoodWitdh() / 100) * 100){
-                xMinimo = getFoodWitdh() - 100;
-                xMassimo = getFoodWitdh();
-               }
-            
-            if (yMassimo > (int) (getFoodHeight() / 100) * 100){
-                yMinimo = getFoodHeight() - 100;
-                yMassimo = getFoodHeight();
-            }
-        //}
+        xMinimo = ((int) (x / 100)) * 100;
+        xMassimo = xMinimo + 100;
+        yMinimo = ((int) (y / 100)) * 100;
+        yMassimo = yMinimo + 100;
+        
+        if (xMassimo > (int) (getFoodWitdh() / 100) * 100){
+            xMinimo = getFoodWitdh() - 100;
+            xMassimo = getFoodWitdh();
+        }
+        
+        if (yMassimo > (int) (getFoodHeight() / 100) * 100){
+            yMinimo = getFoodHeight() - 100;
+            yMassimo = getFoodHeight();
+        }
+        
         
         if ((x + spostamentoX * versoX < xMinimo && versoX == -1) || (x + spostamentoX * versoX >= xMassimo && versoX == 1)) {
             versoX = -versoX;
@@ -132,7 +130,6 @@ public class DraghettoZone extends batteri.Batterio implements Cloneable {
             else
                 spostamento();
         }
-        //nMosse++;
     }
     
     @Override
