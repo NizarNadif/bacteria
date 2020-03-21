@@ -72,11 +72,11 @@ public class Tontino2 extends batteri.Batterio implements Cloneable {
     }
 
     private void spostamento() {
-        if ((x + spostamentoX < 75 && versoX == -1) || (x + spostamentoX >= getFoodWitdh() - 75 && versoX == 1)) {
+        if ((x + spostamentoX * versoX < 75 && versoX == -1) || (x + spostamentoX * versoX >= getFoodWitdh() - 75 && versoX == 1)) {
             versoX = -versoX;
         }
 
-        if ((y + spostamentoY < 75 && versoY == -1) || (y + spostamentoY >= getFoodHeight() - 75 && versoY == 1)) {
+        if ((y + spostamentoY * versoY < 75 && versoY == -1) || (y + spostamentoY * versoY >= getFoodHeight() - 75 && versoY == 1)) {
             versoY = -versoY;
         }
 

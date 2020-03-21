@@ -71,7 +71,7 @@ public class DraghettoOrizzontale extends batteri.Batterio implements Cloneable 
     }
 
     private void spostamento(){
-        if ((x + spostamentoX < 75 && versoX == -1) || (x + spostamentoX >= getFoodWitdh() - 75 && versoX == 1)) {
+        if ((x + spostamentoX * versoX < 75 && versoX == -1) || (x + spostamentoX * versoX >= getFoodWitdh() - 75 && versoX == 1)) {
             versoX = -versoX;
         }
         x += spostamentoX * versoX;
