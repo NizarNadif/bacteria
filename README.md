@@ -46,7 +46,7 @@ Nella seconda parte dell’incontro è stato presentato il batterio agli insegna
 ***Lavoro da svolgere per il prossimo incontro:*** apportare ulteriori modifiche al batterio.
 
 
-## Incontro 4 (17/03/2020 09:45 – 10:45):
+## Incontro 4 (21/03/2020 09:45 – 10:45):
 
 ***Obiettivo:*** 
 
