@@ -39,7 +39,7 @@ Nella seconda parte dell’incontro è stato presentato il batterio agli insegna
 
 ***Obiettivo:*** 
 
-***Partecipanti:*** tutti i membri del gruppo e i professori.
+***Partecipanti:*** tutti i membri del gruppo.
 
 ***Argomenti trattati / decisioni prese:*** .
 
