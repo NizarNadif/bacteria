@@ -55,3 +55,14 @@ Nella seconda parte dell’incontro è stato presentato il batterio agli insegna
 ***Argomenti trattati / decisioni prese:*** .
 
 ***Lavoro da svolgere per il prossimo incontro:*** apportare ulteriori modifiche al batterio.
+
+
+## Incontro 5 (26/03/2020 10:45 – 12:00):
+
+***Obiettivo:*** 
+
+***Partecipanti:*** Cornacchiari, Nadif, Singh e i professori.
+
+***Argomenti trattati / decisioni prese:*** .
+
+***Lavoro da svolgere per il prossimo incontro:*** apportare ulteriori modifiche al batterio.
