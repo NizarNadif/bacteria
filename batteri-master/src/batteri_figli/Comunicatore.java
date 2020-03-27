@@ -30,7 +30,7 @@ import java.util.logging.Logger;
  *
  * @author Alessandro Bugatti &lt; alessandro.bugatti@gmail.com &gt;
  */
-public class TontinoSegnalatore extends batteri.Batterio implements Cloneable {
+public class Comunicatore extends batteri.Batterio implements Cloneable {
 
     private int spostamentoX = 1;
     private int spostamentoY = 0;
@@ -40,7 +40,7 @@ public class TontinoSegnalatore extends batteri.Batterio implements Cloneable {
     private static LinkedList<Integer> listaX = new LinkedList();
     private static LinkedList<Integer> listaY = new LinkedList();
 
-    public TontinoSegnalatore(int x, int y, Color c, batteri.Food f) {
+    public Comunicatore(int x, int y, Color c, batteri.Food f) {
         super(x, y, c, f);
     }
 
@@ -165,9 +165,9 @@ public class TontinoSegnalatore extends batteri.Batterio implements Cloneable {
     @Override
     public batteri.Batterio Clona() {
         try {
-            return (TontinoSegnalatore) this.clone();
+            return (Comunicatore) this.clone();
         } catch (CloneNotSupportedException ex) {
-            Logger.getLogger(TontinoSegnalatore.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Comunicatore.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }

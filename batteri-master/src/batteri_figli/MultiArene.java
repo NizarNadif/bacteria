@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  *
  * @author Alessandro Bugatti &lt; alessandro.bugatti@gmail.com &gt;
  */
-public class DraghettoZone extends batteri.Batterio implements Cloneable {
+public class MultiArene extends batteri.Batterio implements Cloneable {
     
     /**CARATTERISTICHE:
      * - Controllo ad area con delta 5, se non va a a buon fine spostamento obliquo e situazione successiva
@@ -46,7 +46,7 @@ public class DraghettoZone extends batteri.Batterio implements Cloneable {
     private int versoY = (int) (Math.random() * 2) * 2 - 1;
     private int situazione = 0;
     
-    public DraghettoZone(int x, int y, Color c, batteri.Food f) {
+    public MultiArene(int x, int y, Color c, batteri.Food f) {
         super(x, y, c, f);
     }
     
@@ -135,9 +135,9 @@ public class DraghettoZone extends batteri.Batterio implements Cloneable {
     @Override
     public batteri.Batterio Clona() {
         try {
-            return (DraghettoZone) this.clone();
+            return (MultiArene) this.clone();
         } catch (CloneNotSupportedException ex) {
-            Logger.getLogger(DraghettoZone.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MultiArene.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
