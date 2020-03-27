@@ -27,7 +27,7 @@ import java.util.logging.Logger;
  *
  * @author Alessandro Bugatti &lt; alessandro.bugatti@gmail.com &gt;
  */
-public class DraghettoObliquo extends batteri.Batterio implements Cloneable {
+public class GarbageCollector extends batteri.Batterio implements Cloneable {
 
     /**CARATTERISTICHE:
      * - Controllo ad area con delta 5, se non va a a buon fine spostamento obliquo e situazione successiva
@@ -40,9 +40,9 @@ public class DraghettoObliquo extends batteri.Batterio implements Cloneable {
     private int spostamentoY = 0;
     private int versoX = (int) (Math.random() * 2) * 2 - 1;
     private int versoY = (int) (Math.random() * 2) * 2 - 1;
-    private int situazione = 0;
-
-    public DraghettoObliquo(int x, int y, Color c, batteri.Food f) {
+    
+    
+    public GarbageCollector(int x, int y, Color c, batteri.Food f) {
         super(x, y, c, f);
     }
 
@@ -72,7 +72,7 @@ public class DraghettoObliquo extends batteri.Batterio implements Cloneable {
     }
 
     private void spostamento() {
-        if ((x + spostamentoX * versoY < 75 && versoX == -1) || (x + spostamentoX * versoY >= getFoodWitdh() - 75 && versoX == 1)) {
+        if ((x + spostamentoX * versoX < 75 && versoX == -1) || (x + spostamentoX * versoX >= getFoodWitdh() - 75 && versoX == 1)) {
             versoX = -versoX;
         }
 
@@ -91,31 +91,17 @@ public class DraghettoObliquo extends batteri.Batterio implements Cloneable {
 
     @Override
     protected void Sposta() {
-
-        //Controlla nel 7x7 attorno a lui se c'è del cibo e tiene in memoria la prima posizione in cui l'ha trovato e l'ultima
-        //Il batterio segnalerà agli altri 
-        if (situazione == 0) {
-            boolean risultato = controlloVicini(10);
-            if (!risultato) {
-                situazione = 1;
+        if (!controlloVicini(5))
+            if(!controlloVicini(100))
                 spostamento();
-            }
-        }
-        else if (situazione == 1) {
-            boolean risultato = controlloVicini(100);
-            if (risultato)
-                situazione = 0;
-            else 
-                spostamento();
-        } 
     }
 
     @Override
     public batteri.Batterio Clona() {
         try {
-            return (DraghettoObliquo) this.clone();
+            return (GarbageCollector) this.clone();
         } catch (CloneNotSupportedException ex) {
-            Logger.getLogger(DraghettoObliquo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GarbageCollector.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }

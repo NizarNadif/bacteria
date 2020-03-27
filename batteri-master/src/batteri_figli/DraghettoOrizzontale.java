@@ -29,20 +29,12 @@ import java.util.logging.Logger;
  */
 public class DraghettoOrizzontale extends batteri.Batterio implements Cloneable {
 
-    /**CARATTERISTICHE:
-     * - Controllo ad area con delta 5, se non va a a buon fine spostamento obliquo e situazione successiva
-     * - Oppure controllo ad area con delta 100, se non va a buon fine spostamento obliquo e situazione precedente
-     * - L'area di movimento è ridotta di 75
-     * - Tutto viene svolto in 2 turni differenti
-    **/
-    
-    private int spostamentoX = 1;
-    private int versoX = (int) (Math.random() * 2) * 2 - 1;
+    private int spostamentoNullo;
     private int situazione = 0;
 
     public DraghettoOrizzontale(int x, int y, Color c, batteri.Food f) {
         super(x, y, c, f);
-        this.versoX = (int) (Math.random() * 2) * 2 - 1;
+        this.spostamentoNullo = (int)(Math.random()*2) * 2 - 1;
     }
 
     private boolean controlloVicini(int delta) {
@@ -64,26 +56,26 @@ public class DraghettoOrizzontale extends batteri.Batterio implements Cloneable 
         if (xMigliore != x - delta - 10) {
             x = xMigliore;
             y = yMigliore;
-            return true; 
-        } else {
+            return true;
+        } else 
             return false;
-        }
     }
 
     private void spostamento(){
-        if ((x + spostamentoX * versoX < 75 && versoX == -1) || (x + spostamentoX * versoX >= getFoodWitdh() - 75 && versoX == 1)) {
-            versoX = -versoX;
-        }
-        x += spostamentoX * versoX;
+        if (x + spostamentoNullo >= getFoodWitdh() || x + spostamentoNullo < 0)
+                spostamentoNullo*=-1;
+            x += spostamentoNullo;
+        
     }
-
+    
+    
     @Override
     protected void Sposta() {
 
         //Controlla nel 7x7 attorno a lui se c'è del cibo e tiene in memoria la prima posizione in cui l'ha trovato e l'ultima
         //Il batterio segnalerà agli altri 
         if (situazione == 0) {
-            boolean risultato = controlloVicini(10);
+            boolean risultato = controlloVicini(5);
             if (!risultato) {
                 situazione = 1;
                 spostamento();
@@ -95,7 +87,7 @@ public class DraghettoOrizzontale extends batteri.Batterio implements Cloneable 
                 situazione = 0;
             else 
                 spostamento();
-        } 
+        }
     }
 
     @Override
