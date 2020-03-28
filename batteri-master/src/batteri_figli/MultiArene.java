@@ -115,20 +115,10 @@ public class MultiArene extends batteri.Batterio implements Cloneable {
         
         //Controlla nel 7x7 attorno a lui se c'è del cibo e tiene in memoria la prima posizione in cui l'ha trovato e l'ultima
         //Il batterio segnalerà agli altri
-        boolean risultato;
-        if (situazione == 0) {
-            risultato = controlloVicini(10);
-            if (!risultato) {
-                situazione = 1;
+        if (!controlloVicini(5)) {
+            if (!controlloVicini(100)) {
                 spostamento();
             }
-        }
-        else if (situazione == 1) {
-            risultato = controlloVicini(100);
-            if (risultato)
-                situazione = 0;
-            else
-                spostamento();
         }
     }
     

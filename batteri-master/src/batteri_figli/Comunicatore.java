@@ -111,25 +111,16 @@ public class Comunicatore extends batteri.Batterio implements Cloneable {
         //Il batterio segnalerà agli altri
         switch (situazione) {
             case 0: {
-                boolean risultato = controlloVicini(5);
-                if (!risultato) {
-                    situazione = 1;
-                    spostamento();
+                if (!controlloVicini(5)) {
+                    if (!controlloVicini(100)) {
+                        situazione = 1;
+                        spostamento();
+                    }
                 }
                 break;
             }
             case 1: {
 
-                boolean risultato = controlloVicini(100);
-                if (risultato) {
-                    situazione = 0;
-                } else {
-                    spostamento();
-                    situazione = 2;
-                }
-                break;
-            }
-            case 2: {
                 int xMigliore = x - 150;
                 int yMigliore = y - 150;
                 int indice = 0;
@@ -150,11 +141,10 @@ public class Comunicatore extends batteri.Batterio implements Cloneable {
                     y = yMigliore;
                     listaX.remove(indice);
                     listaY.remove(indice);
-                    situazione = 0;
                 } else {
                     spostamento();
-                    situazione = 1;
                 }
+                situazione = 0;
                 break;
             }
             default:
