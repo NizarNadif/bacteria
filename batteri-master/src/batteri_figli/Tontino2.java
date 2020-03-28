@@ -35,7 +35,7 @@ public class Tontino2 extends batteri.Batterio implements Cloneable {
      * - L'area di movimento è ridotta di 75
      * - Tutto viene svolto in 2 turni differenti
     **/
-    
+
     private int spostamentoX = 1;
     private int spostamentoY = 0;
     private int versoX = (int) (Math.random() * 2) * 2 - 1;
@@ -65,7 +65,7 @@ public class Tontino2 extends batteri.Batterio implements Cloneable {
         if (xMigliore != x - delta - 10) {
             x = xMigliore;
             y = yMigliore;
-            return true; 
+            return true;
         } else {
             return false;
         }
@@ -102,9 +102,9 @@ public class Tontino2 extends batteri.Batterio implements Cloneable {
             boolean risultato = controlloVicini(100);
             if (risultato)
                 situazione = 0;
-            else 
+            else
                 spostamento();
-        } 
+        }
     }
 
     @Override

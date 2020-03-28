@@ -18,7 +18,6 @@ package batteri_figli;
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 import java.awt.Color;
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -71,7 +70,6 @@ public class Tontino extends batteri.Batterio implements Cloneable {
         if (x + spostamentoNullo >= getFoodWitdh() || x + spostamentoNullo < 0)
                 spostamentoNullo*=-1;
             x += spostamentoNullo;
-        
     }
     
     
@@ -98,7 +96,7 @@ public class Tontino extends batteri.Batterio implements Cloneable {
         try {
             return (Tontino) this.clone();
         } catch (CloneNotSupportedException ex) {
-            Logger.getLogger(Tontino.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger( Tontino.class.getName()).log(Level.SEVERE, null, ex);
         }
         return null;
     }
